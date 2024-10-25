@@ -11,7 +11,7 @@ const Navigator = () => {
         </div>
         <div className="crud-info">
           <p>create</p>
-          <i class="fa-regular fa-circle-plus"></i>
+          <i className="fa-regular fa-circle-plus"></i>
         </div>
       </Link>
       <Link to="/read" className="crud-item" id="item2">
@@ -20,7 +20,7 @@ const Navigator = () => {
         </div>
         <div className="crud-info">
           <p>read</p>
-          <i class="fa-brands fa-readme"></i>
+          <i className="fa-brands fa-readme"></i>
         </div>
       </Link>
       <Link to="/update" className="crud-item" id="item3">
@@ -29,7 +29,7 @@ const Navigator = () => {
         </div>
         <div className="crud-info">
           <p>update</p>
-          <i class="fa-solid fa-pen-to-square"></i>
+          <i className="fa-solid fa-pen-to-square"></i>
         </div>
       </Link>
       <Link to="/delete" className="crud-item" id="item4">
@@ -38,7 +38,7 @@ const Navigator = () => {
         </div>
         <div className="crud-info">
           <p>delete</p>
-          <i class="fa-solid fa-trash-can"></i>
+          <i className="fa-solid fa-trash-can"></i>
         </div>
       </Link>
     </div>
