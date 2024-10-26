@@ -1,17 +1,25 @@
 const User = require("../models/User");
 
 const getAllUsers = async (req, res) => {
-  const users = await User.find();
-  if (!users) return res.status(204).json({ message: "No User Found" });
-  res.json({ users });
+  try {
+    const users = await User.find();
+    if (!users) return res.status(204).json({ message: "No User Found" });
+    res.json({ users });
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 const getUser = async (req, res) => {
   if (!req?.params?.id)
     return res.status(400).json({ error: "Id is required" });
-  const user = await User.findOne({ _id: req.params.id }).exec();
-  if (!user) return res.status(204).json({ message: "No User Found" });
-  res.json({ user });
+  try {
+    const user = await User.findOne({ _id: req.params.id }).exec();
+    if (!user) return res.status(204).json({ message: "No User Found" });
+    res.json({ user });
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 const createUser = async (req, res) => {
