@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navigator from "./components/navigator";
+import Navigator from "./components/Navigator";
 import CreateUser from "./components/CreateUser";
 import ReadUser from "./components/ReadUser";
 import UpdateUser from "./components/UpdateUser";
