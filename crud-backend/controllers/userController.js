@@ -20,7 +20,7 @@ const createUser = async (req, res) => {
       .status(400)
       .json({ message: "Name, Email and City fields are required" });
   try {
-    const result = User.create({
+    const result = await User.create({
       name: req.body.name,
       email: req.body.email,
       city: req.body.city,
@@ -57,11 +57,13 @@ const updateUser = async (req, res) => {
   }
 };
 
-const deleteUser = (req, res) => {
+const deleteUser = async (req, res) => {
   if (!req?.params?.id)
     return res.status(400).json({ message: "Id is required" });
   try {
-    const result = User.findByIdAndDelete(req.params.id);
+    const foundUser = await User.findOne({ _id: req.params.id }).exec();
+    if (!foundUser) return res.status(204).json({ message: "User Not Found" });
+    const result = await User.deleteOne({ _id: req.params.id });
     res.status(201).json({ message: `User is Deleted successfully` });
   } catch (err) {
     console.error(err);
