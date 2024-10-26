@@ -17,7 +17,7 @@ const UpdateUser = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3500/users/read")
+      .get("https://crud-backend-3urv.onrender.com/users/read")
       .then((res) => {
         const fetchedUsers = Array.isArray(res.data)
           ? res.data
@@ -87,7 +87,7 @@ const UpdateUser = () => {
     if (!validate()) return;
 
     axios
-      .put("http://localhost:3500/users/update", {
+      .put("https://crud-backend-3urv.onrender.com/users/update", {
         id: user._id,
         name: name,
         email: email,

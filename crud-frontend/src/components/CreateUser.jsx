@@ -52,7 +52,7 @@ const CreateUser = () => {
       return;
     }
     axios
-      .post("http://localhost:3500/users/create", {
+      .post("https://crud-backend-3urv.onrender.com/users/create", {
         name: name,
         email: email,
         city: city,

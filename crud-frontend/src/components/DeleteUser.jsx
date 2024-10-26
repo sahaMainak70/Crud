@@ -13,7 +13,7 @@ const DeleteUser = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3500/users/read")
+      .get("https://crud-backend-3urv.onrender.com/users/read")
       .then((res) => {
         const fetchedUsers = Array.isArray(res.data)
           ? res.data
@@ -51,7 +51,7 @@ const DeleteUser = () => {
   const deleteUser = () => {
     if (!user) return;
     axios
-      .delete(`http://localhost:3500/users/delete/${user._id}`)
+      .delete(`https://crud-backend-3urv.onrender.com/users/delete/${user._id}`)
       .then((res) => {
         setMessage(res.data.message || "User Deleted successfully!");
         setMessageType("success");
